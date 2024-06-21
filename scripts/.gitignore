@@ -1,3 +1,4 @@
-wallets/
+#wallets/
 tmp/
 data/path_to_socket.sh
+
