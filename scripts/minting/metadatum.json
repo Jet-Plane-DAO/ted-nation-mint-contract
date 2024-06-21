@@ -1,0 +1,23 @@
+{
+  "image": "ipfs://QmdJLwGpjvfpBYBJq1sz483VNGiW4fjgT4UrM3x9c7hJjv",
+  "Eyes": "Preserved",
+  "Background": "Violet",
+  "Clothing": "Naked",
+  "description": "MutaTed Season, Baby!",
+  "mediaType": "image/png",
+  "Role": "Archaeologist",
+  "Eye Accessory": "No Eye Accessory",
+  "Head Accessory": "None",
+  "Mouth": "Whoops",
+  "Spacesuit": "No Spacesuit",
+  "Special": "None",
+  "name": "MutaTed #816",
+  "files": [
+    {
+      "src": "ipfs://QmdJLwGpjvfpBYBJq1sz483VNGiW4fjgT4UrM3x9c7hJjv",
+      "name": "Mutated816",
+      "mediaType": "image/png"
+    }
+  ],
+  "Skin": "Iron"
+}

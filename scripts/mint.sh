@@ -24,7 +24,7 @@ receiver_address=$(cat ./wallets/receiver-wallet/payment.addr)
 receiver_pkh=$(${cli} address key-hash --payment-verification-key-file ./wallets/receiver-wallet/payment.vkey)
 
 # who is getting the token
-token_holder=$(cat ../minting/recipient.addr)
+token_holder=$(cat ./minting/recipient.addr)
 
 # the minting script policy
 policy_id=$(cat ../hashes/mint.hash)
@@ -55,8 +55,8 @@ prefix_222="000de140"
 ref_name=$(python3 -c "import sys; sys.path.append('./py/'); from get_token_name import token_name; token_name('${array[0]}', ${array[1]}, '${prefix_100}')")
 nft_name=$(python3 -c "import sys; sys.path.append('./py/'); from get_token_name import token_name; token_name('${array[0]}', ${array[1]}, '${prefix_222}')")
 
-echo -n $ref_name > ../minting/ref.token
-echo -n $nft_name > ../minting/nft.token
+echo -n $ref_name > ./minting/ref.token
+echo -n $nft_name > ./minting/nft.token
 
 # The assets that are being mints
 REF_ASSET="1 ${policy_id}.${ref_name}"
@@ -69,7 +69,7 @@ MINT_ASSET="1 ${policy_id}.${ref_name} + 1 ${policy_id}.${nft_name}"
 UTXO_VALUE=$(${cli} transaction calculate-min-required-utxo \
     --babbage-era \
     --protocol-params-file ./tmp/protocol.json \
-    --tx-out-inline-datum-file ../minting/metadatum.json \
+    --tx-out-inline-datum-file ./minting/metadatum.json \
     --tx-out="${cip68_script_address} + 3000000 + ${REF_ASSET}" | tr -dc '0-9')
 reference_address_out="${cip68_script_address} + ${UTXO_VALUE} + ${REF_ASSET}"
 
@@ -90,13 +90,13 @@ echo -e "\033[0;36m Gathering Collateral UTxO Information  \033[0m"
 ${cli} query utxo \
     ${network} \
     --address ${collat_address} \
-    --out-file ../minting/collat_utxo.json
-TXNS=$(jq length ../minting/collat_utxo.json)
+    --out-file ./minting/collat_utxo.json
+TXNS=$(jq length ./minting/collat_utxo.json)
 if [ "${TXNS}" -eq "0" ]; then
    echo -e "\n \033[0;31m NO UTxOs Found At ${collat_address} \033[0m \n";
    exit 1;
 fi
-collat_utxo=$(jq -r 'keys[0]' ../minting/collat_utxo.json)
+collat_utxo=$(jq -r 'keys[0]' ./minting/collat_utxo.json)
 
 script_ref_utxo=$(${cli} transaction txid --tx-file ./tmp/mint-reference-utxo.signed)
 
@@ -105,12 +105,12 @@ echo -e "\033[0;36m Building Tx \033[0m"
 
 FEE=$(${cli} transaction build \
     --babbage-era \
-    --out-file ../minting/tx.draft \
+    --out-file ./minting/tx.draft \
     --change-address ${receiver_address} \
     --tx-in ${receiver_tx_in} \
     --tx-in-collateral="${collat_utxo}" \
     --tx-out="${reference_address_out}" \
-    --tx-out-inline-datum-file ../minting/metadatum.json \
+    --tx-out-inline-datum-file ./minting/metadatum.json \
     --tx-out="${receiver_address_out}" \
     --required-signer-hash ${receiver_pkh} \
     --required-signer-hash ${collat_pkh} \
@@ -134,8 +134,8 @@ ${cli} transaction sign \
     --signing-key-file ./wallets/hot-wallet/payment.skey \
     --signing-key-file ./wallets/collat-wallet/payment.skey \
     --signing-key-file ./wallets/receiver-wallet/payment.skey \
-    --tx-body-file ../minting/tx.draft \
-    --out-file ../minting/tx.signed \
+    --tx-body-file ./minting/tx.draft \
+    --out-file ./minting/tx.signed \
     ${network}
 #
 # exit
@@ -143,8 +143,10 @@ ${cli} transaction sign \
 echo -e "\033[0;36m Submitting \033[0m"
 ${cli} transaction submit \
     ${network} \
-    --tx-file ../minting/tx.signed
+    --tx-file ./minting/tx.signed
 
-tx=$(${cli} transaction txid --tx-file ../minting/tx.signed)
+tx=$(${cli} transaction txid --tx-file ./minting/tx.signed)
 
 echo "Tx Hash:" $tx
+
+echo "$tx" > ./minting/tx.addr
