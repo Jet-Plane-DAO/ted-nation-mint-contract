@@ -1,1 +1,1 @@
-/home/logic/Documents/Work/LogicalMechanism/testnet-node/node/db-testnet/node.socket
+/home/cardano/preprod/sockets/node-preprod.socket

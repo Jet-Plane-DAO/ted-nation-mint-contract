@@ -1,6 +1,6 @@
 {
   "__comment1__": "The hot key",
-  "hotKey": "8225e3fb2adefb8dd0e8c822c940c6696c7bea1e99609d2573c44127",
+  "hotKey": "2100a8bd7ed578027f29577cf3e825cefccaaf86ddb211ff489feccd",
   "__comment2__": "This allows many policies to be controlled by one hotkey",
   "random": "acab",
   "__comment3__": "This is the stake pool to delegate the cip68 ada",
