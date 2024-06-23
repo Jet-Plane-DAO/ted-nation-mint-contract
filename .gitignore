@@ -6,3 +6,4 @@ build/
 docs/
 # this causes issues for some reason
 aiken.lock
+*/minting/

@@ -1,23 +1,161 @@
 {
-  "image": "ipfs://QmdJLwGpjvfpBYBJq1sz483VNGiW4fjgT4UrM3x9c7hJjv",
-  "Eyes": "Preserved",
-  "Background": "Violet",
-  "Clothing": "Naked",
-  "description": "MutaTed Season, Baby!",
-  "mediaType": "image/png",
-  "Role": "Archaeologist",
-  "Eye Accessory": "No Eye Accessory",
-  "Head Accessory": "None",
-  "Mouth": "Whoops",
-  "Spacesuit": "No Spacesuit",
-  "Special": "None",
-  "name": "MutaTed #816",
-  "files": [
+  "constructor": 0,
+  "fields": [
     {
-      "src": "ipfs://QmdJLwGpjvfpBYBJq1sz483VNGiW4fjgT4UrM3x9c7hJjv",
-      "name": "Mutated816",
-      "mediaType": "image/png"
+      "map": [
+        {
+          "k": {
+            "bytes": "696d616765"
+          },
+          "v": {
+            "bytes": "697066733a2f2f516d6359777a4c487a4a69695839767a3457743142726379504477485275516d5855583737666d47587232765371"
+          }
+        },
+        {
+          "k": {
+            "bytes": "45796573"
+          },
+          "v": {
+            "bytes": "506f6c79636f726961"
+          }
+        },
+        {
+          "k": {
+            "bytes": "4261636b67726f756e64"
+          },
+          "v": {
+            "bytes": "4c6967687420426c7565"
+          }
+        },
+        {
+          "k": {
+            "bytes": "436c6f7468696e67"
+          },
+          "v": {
+            "bytes": "4e6562756c61205363617266"
+          }
+        },
+        {
+          "k": {
+            "bytes": "6465736372697074696f6e"
+          },
+          "v": {
+            "bytes": "4d75746154656420536561736f6e2c204261627921"
+          }
+        },
+        {
+          "k": {
+            "bytes": "6d6564696154797065"
+          },
+          "v": {
+            "bytes": "696d6167652f706e67"
+          }
+        },
+        {
+          "k": {
+            "bytes": "526f6c65"
+          },
+          "v": {
+            "bytes": "4172636861656f6c6f67697374"
+          }
+        },
+        {
+          "k": {
+            "bytes": "457965204163636573736f7279"
+          },
+          "v": {
+            "bytes": "4e6f20457965204163636573736f7279"
+          }
+        },
+        {
+          "k": {
+            "bytes": "48656164204163636573736f7279"
+          },
+          "v": {
+            "bytes": "4d6564757361"
+          }
+        },
+        {
+          "k": {
+            "bytes": "4d6f757468"
+          },
+          "v": {
+            "bytes": "546f756e6765204f7574"
+          }
+        },
+        {
+          "k": {
+            "bytes": "537061636573756974"
+          },
+          "v": {
+            "bytes": "4e6f20537061636573756974"
+          }
+        },
+        {
+          "k": {
+            "bytes": "5370656369616c"
+          },
+          "v": {
+            "bytes": "4e6f6e65"
+          }
+        },
+        {
+          "k": {
+            "bytes": "6e616d65"
+          },
+          "v": {
+            "bytes": "4d757461546564202332303938"
+          }
+        },
+        {
+          "k": {
+            "bytes": "66696c6573"
+          },
+          "v": {
+            "list": [
+              {
+                "map": [
+                  {
+                    "k": {
+                      "bytes": "737263"
+                    },
+                    "v": {
+                      "bytes": "697066733a2f2f516d6359777a4c487a4a69695839767a3457743142726379504477485275516d5855583737666d47587232765371"
+                    }
+                  },
+                  {
+                    "k": {
+                      "bytes": "6e616d65"
+                    },
+                    "v": {
+                      "bytes": "4d75746174656432303938"
+                    }
+                  },
+                  {
+                    "k": {
+                      "bytes": "6d6564696154797065"
+                    },
+                    "v": {
+                      "bytes": "696d6167652f706e67"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "k": {
+            "bytes": "536b696e"
+          },
+          "v": {
+            "bytes": "4379626f7267"
+          }
+        }
+      ]
+    },
+    {
+      "int": 1
     }
-  ],
-  "Skin": "Iron"
+  ]
 }
